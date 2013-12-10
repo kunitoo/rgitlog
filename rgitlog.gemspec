@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Rgitlog::VERSION
   s.authors     = ['kunihiko ITO']
   s.email       = ['kuni.110.92@gmail.com']
-  s.homepage    = 'http://github.com'
+  s.homepage    = 'https://github.com/kunitoo/rgitlog'
   s.summary     = 'git log on Rails'
   s.description = 'git log on Rails'
 
