@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = 'git log on Rails'
   s.description = 'git log on Rails'
 
-  s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.rdoc']
+  s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
   s.add_dependency 'rails', '~> 4.0.1'
   s.add_runtime_dependency 'gitlab-grit', '2.6.0'
