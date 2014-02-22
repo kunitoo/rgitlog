@@ -1,22 +1,18 @@
 require_dependency 'rgitlog/application_controller'
-require 'grit'
+require 'rugged'
 
 module Rgitlog
   class RgitlogController < ApplicationController
     def index
-      @commits = repo.commits
+      @commits = commits
     end
 
     private
-    def repo dir = Dir.pwd
-      parent = parent_dir(dir)
-      return [] if dir == parent
-      return Grit::Repo.new(dir) if Dir.entries(dir).include?('.git')
-      repo(parent)
-    end
 
-    def parent_dir currrent_dir
-      File.expand_path('..', currrent_dir)
+    def commits
+      path = Rugged::Repository.discover(Dir.pwd)
+      repo = Rugged::Repository.new(path)
+      repo.head.log.map {|l| repo.lookup(l[:id_new]) }
     end
   end
 end
