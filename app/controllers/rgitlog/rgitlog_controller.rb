@@ -12,7 +12,7 @@ module Rgitlog
     def commits
       path = Rugged::Repository.discover(Dir.pwd)
       repo = Rugged::Repository.new(path)
-      repo.head.log.map {|l| repo.lookup(l[:id_new]) }
+      repo.head.log
     end
   end
 end
