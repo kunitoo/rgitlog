@@ -12,7 +12,10 @@ module Rgitlog
     def commits
       path = Rugged::Repository.discover(Dir.pwd)
       repo = Rugged::Repository.new(path)
-      repo.head.log
+      walker = Rugged::Walker.new(repo)
+      walker.sorting(Rugged::SORT_DATE)
+      walker.push(repo.last_commit)
+      walker.to_a
     end
   end
 end

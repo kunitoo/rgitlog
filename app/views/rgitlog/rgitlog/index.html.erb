@@ -1,6 +1,6 @@
 <h1>git log</h1>
 <ul>
-  <% @commits.reverse.each do |commit| %>
-    <li><%= commit[:message] %></li>
+  <% @commits.each do |commit| %>
+    <li><%= commit.message %></li>
   <% end %>
 </ul>
