@@ -1,7 +1,5 @@
-GIT
-  remote: git://github.com/kunitoo/rgitlog.git
-  revision: 0276e37fde232b8fb319afbe446a0213556c24b3
-  branch: use-rugged
+PATH
+  remote: ../..
   specs:
     rgitlog (0.0.1)
       rails (~> 4.0.1)
