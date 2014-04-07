@@ -4,15 +4,23 @@ require 'rugged'
 module Rgitlog
   class RgitlogController < ApplicationController
     def index
-      @commits = commits
+      @commits  = commits
+      @branches = branches
     end
 
     private
 
     def commits
-      path = Rugged::Repository.discover(Dir.pwd)
-      repo = Rugged::Repository.new(path)
       repo.walk(repo.last_commit).to_a
+    end
+
+    def branches
+      repo.branches.to_a
+    end
+
+    def repo
+      path = Rugged::Repository.discover(Dir.pwd)
+      Rugged::Repository.new(path)
     end
   end
 end

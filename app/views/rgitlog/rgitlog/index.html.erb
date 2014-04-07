@@ -1,4 +1,11 @@
 <h1>git log</h1>
+<h2>branches</h2>
+<ul>
+  <% @branches.each do |branch| %>
+    <li><%= branch.name %></li>
+  <% end %>
+</ul>
+<h2>commits</h2>
 <ul>
   <% @commits.each do |commit| %>
     <li><%= commit.message %></li>
