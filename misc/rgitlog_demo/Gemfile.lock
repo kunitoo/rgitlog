@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    rgitlog (0.0.1)
+    rgitlog (0.0.2)
       rails (~> 4.0.1)
       rugged
 
